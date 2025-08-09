@@ -19,7 +19,7 @@ Required variable check
 
 #### Install
 ```bash
-pip install telepop-env setuptools wheels
+pip install telepop-env setuptools wheel
 ```
 
 
