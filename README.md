@@ -44,20 +44,21 @@ print(DEBUG, DB_PORT, DB_URL)
 ```python
 from telepop_env import env
 
-# define variables
+# define variables inside your app
 DEBUG=env.bool('DEBUG',default=False,required=True)
 DB_PORT=env.int('DB_PORT',default=5432)
 DB_URL = env.str("DB_URL", default="sqlite:///:memory:")
+
 # then call function
 env.generate_example()
 
 ```
-#### result will be `.env.example` in your project root with defined variables names
+#### It will generate `.env.example` in your project root with defined variables names. I guess it useful while you need to create new .env with empty values. Rename it and use !
 
 ```bash
-DEBUG=true
-DB_PORT=5432
-DB_URL="sqlite:///:memory:"
+DEBUG=
+DB_PORT=
+DB_URL=
 
 ```
 
