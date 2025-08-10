@@ -35,22 +35,29 @@ DEBUG = env.bool("DEBUG", default=False)
 DB_PORT = env.int("DB_PORT", required=True)
 DB_URL = env.str("DB_URL", default="sqlite:///:memory:")
 
+# these will be added to project environment variables
 print(DEBUG, DB_PORT, DB_URL)
 ```
 
-#### generate .env with 
+#### how to generate .env with `env.generate_example()`
 
 ```python
 from telepop_env import env
-# call function
+
+# define variables
+DEBUG=env.bool('DEBUG',default=False,required=True)
+DB_PORT=env.int('DB_PORT',default=5432)
+DB_URL = env.str("DB_URL", default="sqlite:///:memory:")
+# then call function
 env.generate_example()
 
 ```
-#### result will be like
+#### result will be `.env.example` in your project root with defined variables names
 
 ```bash
 DEBUG=true
 DB_PORT=5432
+DB_URL="sqlite:///:memory:"
 
 ```
 
