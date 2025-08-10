@@ -5,7 +5,7 @@ Reads `.env` + `os.environ`, supports type casting, validation, and `.env.exampl
 
 ---
 
-## Features:
+Features:
 
 Zero dependencies
 
@@ -15,9 +15,10 @@ Required variable check
 
 .env.example generation from used variables
 
+---
 
+Install
 
-#### Install
 ```bash
 pip install telepop-env setuptools wheel
 ```
@@ -26,7 +27,7 @@ pip install telepop-env setuptools wheel
 
 ---
 
-#### usage
+Usage:
 
 ```python
 from telepop_env import env
@@ -38,8 +39,9 @@ DB_URL = env.str("DB_URL", default="sqlite:///:memory:")
 # these will be added to project environment variables
 print(DEBUG, DB_PORT, DB_URL)
 ```
+---
 
-#### how to generate .env with `env.generate_example()`
+How to generate .env with `env.generate_example()`
 
 ```python
 from telepop_env import env
@@ -53,7 +55,7 @@ DB_URL = env.str("DB_URL", default="sqlite:///:memory:")
 env.generate_example()
 
 ```
-#### It will generate `.env.example` in your project root with defined variables names. I guess it useful while you need to create new .env with empty values. Rename it and use !
+It will generate `.env.example` in your project root with defined variables names. I guess it useful while you need to create new .env with empty values. Rename it and use !
 
 ```bash
 DEBUG=
@@ -64,7 +66,7 @@ DB_URL=
 
 ---
 
-#### Pypi page: 
+Pypi page: 
 
 https://pypi.org/project/telepop-env/
 
